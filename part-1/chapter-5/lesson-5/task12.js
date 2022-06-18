@@ -1,4 +1,9 @@
 function unique(arr) {
-    let uniqueArr = Array.from(new Set(arr))
-    return uniqueArr
+    let result = [];
+    for (let i=0; i<arr.length; i++){
+        if (!result.includes(arr[i])){
+            result.push(arr[i])
+        }
+    }
+    return result;
   }
