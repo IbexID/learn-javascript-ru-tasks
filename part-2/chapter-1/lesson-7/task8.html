@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+  <!-- клик по этой кнопке вызовет clockStart() -->
+  <input type="button" onclick="clockStart()" value="Старт">
+
+  <!-- клик по этой кнопке вызовет clockStop() -->
+  <input type="button" onclick="clockStop()" value="Стоп">
+  <script>
+    let clockActive = false;
+    let clock = document.createElement('div')
+    
+    function refresh(){
+    let date = new Date();
+    let hours = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+    if (sec.length===1){
+        sec = '0' + sec
+    }
+
+    clock.innerHTML = `${hours}:${min}:${sec}`
+    
+
+    }
+
+    function clockStart(){
+        if(!clockActive){
+            document.body.append(clock)
+            console.log(clock)
+            setInterval(refresh, 1000)
+            refresh();
+        }
+        clockActive = true;
+    }
+    function clockStop(){
+      clockActive = false;
+      clock.remove()
+      clearInterval(refresh)
+    }
+
+    </script>
+</body>
+</html>
