@@ -1,0 +1,21 @@
+<!-- В коде ниже используется вертикальное центрирование при помощи table-cell + vertical-align.
+
+Почему оно не работает? 
+
+<style>
+  .arrow {
+    position: absolute;
+    height: 60px;
+    border: 1px solid black;
+    font-size: 28px;
+
+    display: table-cell;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="arrow">«</div> -->
+
+<!-- 
+    центрирование не работает из-за position: absolute, который убирает элемент из потока.В данном случае проблему можно решить, приравняв высоту строки высоте элемента: line-height: 60px;
+ -->
